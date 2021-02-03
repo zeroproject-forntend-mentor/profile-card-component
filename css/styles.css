@@ -1,0 +1,148 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: Kumbh Sans;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 91%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Dark-cyan);
+  position: relative;
+  overflow: hidden;
+}
+
+body::after,
+body::before {
+  content: '';
+  position: fixed;
+  width: 100rem;
+  height: 100rem;
+  background-size: contain;
+}
+
+body::after {
+  background-image: url(../images/bg-pattern-top.svg);
+  bottom: 45%;
+  right: 40%;
+}
+
+body::before {
+  background-image: url(../images/bg-pattern-bottom.svg);
+  bottom: -70%;
+  left: 40%;
+}
+
+.card {
+  height: 35rem;
+  width: 33rem;
+  background-image: url(../images/bg-pattern-card.svg);
+  border-radius: 1.6rem;
+  overflow: hidden;
+  font-size: 1.8rem;
+  z-index: 100;
+}
+
+.card__header {
+  height: 33%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__image {
+  border: .5rem solid white;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -40%;
+}
+
+.card__info {
+  background-color: #fff;
+  text-align: center;
+  height: 70%;
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__high,
+.card__light {
+  margin: .5rem;
+}
+
+.card__high {
+  font-weight: 700;
+  color: var(--Very-dark-desaturated-blue);
+}
+
+.card__light {
+  font-weight: 400;
+  color: var(--Dark-grayish-blue);
+  font-size: 1.3rem;
+}
+
+.card__light--age {
+  font-size: 1.8rem;
+}
+
+.card__stats {
+  height: 55%;
+  width: 100%;
+  display: flex;
+  padding: 2rem 0;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-top: .1rem solid var(--Dark-gray);
+}
+
+.card__number {
+  width: 20%;
+}
+
+@media (min-width: 1024px) {
+
+  body::after {
+    background-image: url(../images/bg-pattern-bottom.svg);
+    bottom: -80%;
+    right: -40%;
+  }
+
+  body::before {
+    background-image: url(../images/bg-pattern-top.svg);
+    bottom: 45%;
+    left: -40%;
+  }
+}
+
+@media (min-width: 1440px) {
+  body::after {
+    background-image: url(../images/bg-pattern-bottom.svg);
+    bottom: -70%;
+    right: -20%;
+  }
+
+  body::before {
+    background-image: url(../images/bg-pattern-top.svg);
+    bottom: 30%;
+    left: -20%;
+  }
+}
